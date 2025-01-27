@@ -1,213 +1,355 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Surya Loganathan | Cloud & DevOps Engineer</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surya Loganathan - Portfolio</title>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-      body {
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f9f9f9;
-        color: #333;
-        line-height: 1.6;
-      }
+        /* General Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
 
-      header {
-        background: linear-gradient(to right, #4CAF50, #FF5733);
-        color: white;
-        padding: 20px 0;
-        text-align: center;
-      }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 20px;
+        }
 
-      header .logo h1 {
-        margin: 0;
-        font-size: 2.5em;
-        letter-spacing: 2px;
-      }
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #007BFF, #00BFFF);
+            color: #fff;
+            padding: 60px 0;
+            text-align: center;
+            border-bottom-left-radius: 50% 20%;
+            border-bottom-right-radius: 50% 20%;
+        }
 
-      nav ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-      }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: bold;
+        }
 
-      nav ul li {
-        display: inline;
-        margin: 0 15px;
-      }
+        header p {
+            margin: 10px 0;
+            font-size: 1.2em;
+        }
 
-      nav ul li a {
-        color: white;
-        text-decoration: none;
-        font-weight: bold;
-      }
+        header a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
-      nav ul li a:hover {
-        text-decoration: underline;
-      }
+        header a:hover {
+            text-decoration: underline;
+        }
 
-      .section {
-        padding: 40px;
-        margin: 20px auto;
-        background: linear-gradient(to right, #ffffff, #e8eaf6);
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        width: 80%;
-      }
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #333;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
-      .title {
-        color: #4CAF50;
-        margin-bottom: 20px;
-        font-size: 1.8em;
-        text-align: center;
-        background: linear-gradient(to right, #FF5733, #4CAF50);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.1em;
+            transition: color 0.3s ease;
+        }
 
-      ul {
-        list-style: none;
-        padding: 0;
-      }
+        nav a:hover {
+            color: #00BFFF;
+        }
 
-      ul li {
-        background: linear-gradient(to right, #f3e5f5, #d1c4e9);
-        margin: 10px 0;
-        padding: 15px;
-        border-left: 4px solid #FF5733;
-        border-radius: 5px;
-      }
+        /* Sections */
+        section {
+            margin: 20px 0;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-      .btn {
-        display: inline-block;
-        background: linear-gradient(to right, #4CAF50, #FF5733);
-        color: white;
-        padding: 12px 20px;
-        border-radius: 5px;
-        text-decoration: none;
-        margin-top: 15px;
-        font-size: 1em;
-        transition: background 0.3s ease;
-      }
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
 
-      .btn:hover {
-        background: linear-gradient(to right, #FF5733, #4CAF50);
-      }
+        section h2 {
+            color: #007BFF;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+            border-bottom: 2px solid #00BFFF;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
 
-      .container {
-        width: 90%;
-        margin: auto;
-        max-width: 1200px;
-        text-align: center;
-      }
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
 
-      .project {
-        margin-bottom: 30px;
-        text-align: left;
-      }
+        .skill {
+            background: #007BFF;
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
 
-      .project h4 {
-        color: #673ab7;
-        margin: 0 0 10px 0;
-        font-size: 1.2em;
-      }
+        .skill:hover {
+            background: #00BFFF;
+            transform: scale(1.05);
+        }
 
-      .project p {
-        margin: 0;
-        font-size: 1em;
-        line-height: 1.5;
-        color: #5e35b1;
-      }
+        .skill i {
+            font-size: 2em;
+            margin-bottom: 10px;
+            color: #fff;
+        }
 
-      a {
-        color: #d50000;
-        text-decoration: none;
-      }
+        /* Projects Section */
+        .project {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #f4f4f9;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-      a:hover {
-        text-decoration: underline;
-      }
+        .project:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
 
-      footer {
-        background: linear-gradient(to right, #673ab7, #512da8);
-        color: white;
-        padding: 20px 0;
-        text-align: center;
-        margin-top: 40px;
-      }
+        .project h3 {
+            color: #007BFF;
+            margin-bottom: 10px;
+        }
 
-      footer p {
-        margin: 0;
-        font-size: 0.9em;
-      }
+        .project p {
+            margin: 5px 0;
+        }
+
+        .project i {
+            font-size: 1.5em;
+            color: #007BFF;
+            margin-right: 10px;
+        }
+
+        /* Education and Certifications Sections */
+        .education-item, .certification-item {
+            margin-bottom: 15px;
+            padding: 15px;
+            background: #f4f4f9;
+            border-radius: 10px;
+        }
+
+        .education-item h3, .certification-item h3 {
+            color: #007BFF;
+            margin-bottom: 5px;
+        }
+
+        .education-item i, .certification-item i {
+            font-size: 1.2em;
+            color: #007BFF;
+            margin-right: 10px;
+        }
+
+        .certification-item a {
+            color: #00BFFF;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .certification-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: #00BFFF;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav a {
+                margin: 5px 0;
+            }
+
+            header h1 {
+                font-size: 2em;
+            }
+
+            header p {
+                font-size: 1em;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            }
+        }
     </style>
-  </head>
-  <body>
-    <header id="header">
-      <div class="logo">
-        <h1>Surya Infinite</h1>
-      </div>
-      <nav>
-        <ul>
-          <li><a href="#header">Home</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
+</head>
+<body>
+    <header>
+        <h1>Surya Loganathan</h1>
+        <p>Cloud Operations Engineer | 9843788829 | <a href="mailto:suryabytes3152@gmail.com">suryabytes3152@gmail.com</a></p>
     </header>
 
-    <main>
-      <!-- Skills Section -->
-      <section id="skills" class="section">
-        <div class="container">
-          <h3 class="title">Skills</h3>
-          <ul>
-            <li>Cloud Providers: AWS, Azure</li>
-            <li>Configuration Management: Ansible, Shell-Script</li>
-            <li>IAC (Infrastructure as Code): Terraform</li>
-            <li>Containerization: Docker, Kubernetes</li>
-            <li>Version Control: GitHub, Azure DevOps</li>
-            <li>CI/CD: GitHub Actions, Jenkins</li>
-            <li>Programming: Python</li>
-          </ul>
-        </div>
-      </section>
+    <nav>
+        <a href="#about">About Me</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#certifications">Certifications</a>
+    </nav>
 
-      <!-- Projects Section -->
-      <section id="projects" class="section">
-        <div class="container">
-          <h3 class="title">Projects</h3>
-          <div class="project">
-            <h4>Host a Static Website on AWS S3</h4>
-            <p>Create a static website using HTML/CSS/JavaScript and host it on AWS S3. Linked to a custom domain via Route 53.</p>
-          </div>
-          <div class="project">
-            <h4>Build a Virtual Machine on AWS EC2</h4>
-            <p>Provision a VM, install software, and host a basic application or website. Configure security groups and firewall rules.</p>
-          </div>
-          <div class="project">
-            <h4>Automate Cloud Resource Creation with Terraform</h4>
-            <p>Write Terraform scripts to automate the creation of resources like EC2, S3, and RDS on AWS.</p>
-          </div>
-        </div>
-      </section>
+    <div class="container">
+        <!-- About Me Section -->
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I am a passionate Cloud Operations Engineer with expertise in AWS, Linux, and scripting. My goal is to design, deploy, and manage scalable and efficient cloud solutions while continuously enhancing my technical skills.</p>
+            <div style="text-align: center;">
+                <i class="fas fa-cloud-upload-alt" style="font-size: 3em; color: #007BFF;"></i>
+            </div>
+        </section>
 
-      <!-- Contact Section -->
-      <section id="contact" class="section">
-        <div class="container">
-          <h3 class="title">Contact</h3>
-          <p>Email: <a href="mailto:suryabytes3152@gmail.com">suryabytes3152@gmail.com</a></p>
-          <p>Phone: <a href="tel:+919843788829">+91 9843788829</a></p>
-          <p>LinkedIn: <a href="https://www.linkedin.com/in/surya-l-670468280" target="_blank">Surya Loganathan</a></p>
-        </div>
-      </section>
-    </main>
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2>Skills & Abilities</h2>
+            <div class="skills-grid">
+                <div class="skill">
+                    <i class="fab fa-aws"></i>
+                    <p>Cloud Providers: Azure & AWS</p>
+                </div>
+                <div class="skill">
+                    <i class="fas fa-cogs"></i>
+                    <p>Configuration Management: Ansible, Shell-Script</p>
+                </div>
+                <div class="skill">
+                    <i class="fas fa-code"></i>
+                    <p>IAC (Infrastructure as Code): Terraform</p>
+                </div>
+                <div class="skill">
+                    <i class="fab fa-docker"></i>
+                    <p>Containerization: Docker, Kubernetes</p>
+                </div>
+                <div class="skill">
+                    <i class="fab fa-github"></i>
+                    <p>Version Control: Azure DevOps, GitHub</p>
+                </div>
+                <div class="skill">
+                    <i class="fas fa-tools"></i>
+                    <p>CI/CD: GitHub Actions, Jenkins</p>
+                </div>
+                <div class="skill">
+                    <i class="fab fa-python"></i>
+                    <p>Programming Languages: Python</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2>Project Experience</h2>
+            <div class="project">
+                <h3><i class="fas fa-globe"></i> Host a Static Website on AWS S3</h3>
+                <p><strong>Description:</strong> Created a static website (HTML/CSS/JavaScript) and hosted it using AWS S3. Enabled public access and linked it with a custom domain using Route 53.</p>
+                <p><strong>Skills Learned:</strong> Setting up S3 buckets, configuring permissions, integrating AWS Route 53.</p>
+            </div>
+            <div class="project">
+                <h3><i class="fas fa-server"></i> Build a Virtual Machine on AWS</h3>
+                <p><strong>Description:</strong> Set up a virtual machine on AWS EC2 or Azure. Installed software and hosted a basic application or website.</p>
+                <p><strong>Skills Learned:</strong> Provisioning EC2 or Azure VM, connecting via SSH/RDP, configuring security groups.</p>
+            </div>
+            <div class="project">
+                <h3><i class="fas fa-code-branch"></i> Automate Cloud Resource Creation with Terraform</h3>
+                <p><strong>Description:</strong> Used Terraform to write infrastructure as code (IAC) scripts to automate the creation of cloud resources like EC2, S3, or RDS.</p>
+                <p><strong>Skills Learned:</strong> Writing Terraform scripts, understanding cloud resource provisioning, managing configurations.</p>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education">
+            <h2>Education</h2>
+            <div class="education-item">
+                <h3><i class="fas fa-graduation-cap"></i> Kalaignararu Nanidhi Institute of Technology – Coimbatore</h3>
+                <p>Bachelor of Engineering (AE) – 8.3 CGPA</p>
+            </div>
+            <div class="education-item">
+                <h3><i class="fas fa-school"></i> Bharathidhasanar Matric Hr. Sec. School – Arakkonam</h3>
+                <p>HSC (Higher Secondary) – 82%</p>
+            </div>
+            <div class="education-item">
+                <h3><i class="fas fa-school"></i> Bharathidhasanar Matric Hr. Sec. School – Arakkonam</h3>
+                <p>SSLC (Secondary School Leaving Certificate) - 71%</p>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications">
+            <h2>Certifications</h2>
+            <div class="certification-item">
+                <h3><i class="fab fa-google"></i> Google Cloud Certificate</h3>
+                <p>Successfully completed the Google Cloud Skills Boost program, gaining expertise in various Google Cloud Platform (GCP) services such as cloud storage, virtual machines, and serverless computing.</p>
+                <p><strong>View Credentials:</strong> <a href="https://www.cloudskillsboost.google/public_profiles/YOUR_PROFILE_ID" target="_blank">Click here to view my Google Cloud credentials</a></p>
+            </div>
+            <div class="certification-item">
+                <h3><i class="fas fa-certificate"></i> UAV Certificate</h3>
+                <p>Received certification in "UAV System Design and its Real-Time Applications" from CASR, MIT Campus, Anna University. This program provided hands-on experience in UAV technology and its applications in modern agriculture, including crop monitoring and field analysis.</p>
+            </div>
+        </section>
+    </div>
 
     <footer>
-      <p>&copy; 2025 Surya Loganathan. All Rights Reserved.</p>
+        <p>Connect with me on <a href="https://www.linkedin.com/in/surya-l-670468280" target="_blank">LinkedIn</a></p>
     </footer>
-  </body>
+
+    <script>
+        // JavaScript for interactivity (optional)
+        document.addEventListener("DOMContentLoaded", function () {
+            console.log("Portfolio loaded!");
+        });
+    </script>
+</body>
 </html>
